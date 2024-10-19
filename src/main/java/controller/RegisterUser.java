@@ -83,7 +83,7 @@ public class RegisterUser extends HttpServlet {
         //request.setAttribute("userIdError", userIdError);
         request.setAttribute("passwordError", passwordError);
         request.setAttribute("confirmPasswordError", confirmPasswordError);
-        request.getRequestDispatcher("register.jsp").forward(request, response);
+        request.getRequestDispatcher("register_prototype.jsp").forward(request, response);
         return;
     }
     boolean isSaved = saveUserToDatabase(customerName, email, mobileNumber, address, password);
@@ -102,7 +102,7 @@ public class RegisterUser extends HttpServlet {
     {
         // Handle the case if saving to the database fails
         request.setAttribute("errorMessage", "Registration failed due to a server error.");
-        request.getRequestDispatcher("register.jsp").forward(request, response);
+        request.getRequestDispatcher("register_prototype.jsp").forward(request, response);
     }
 
     // Process registration if valid

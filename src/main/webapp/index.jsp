@@ -35,6 +35,10 @@ button{
     color: #E4F8EA;
 }
 
+button:hover{
+cursor: pointer;
+}
+
 h1{
     text-align: center;
     margin: 10px;
