@@ -1,0 +1,28 @@
+CREATE TABLE tbl_UserProfile (
+UserID INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+FullName VARCHAR(100) NOT NULL,
+Rec_Address VARCHAR(255),
+Email VARCHAR(100) UNIQUE NOT NULL,
+MobileNumber VARCHAR(15) NOT NULL,
+Password VARCHAR(255) NOT NULL,
+Role VARCHAR(50) NOT NULL);
+
+
+
+CREATE TABLE tbl_Booking (
+Booking_ID int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+User_ID int NOT NULL,
+Rec_Name VARCHAR(100) NOT NULL,
+Rec_Address VARCHAR(255) NOT NULL,
+Rec_Pin VARCHAR(10),
+Rec_Mobile VARCHAR(15),
+Par_Weight_Gram int NOT NULL,
+Par_Contents_Description VARCHAR(255),
+Par_Delivery_Type VARCHAR(50),
+Par_Packing_Preference VARCHAR(50),
+Par_PickupTime TIMESTAMP,
+Par_DropoffTime TIMESTAMP,
+Par_ServiceCost double,
+Par_PaymentTime TIMESTAMP,
+Par_Status VARCHAR(50),
+FOREIGN KEY (User_ID) REFERENCES tbl_UserProfile(UserID));
